@@ -14,13 +14,13 @@ const User = require("./models/User")
 const passport = require("passport");
 var LocalStrategy = require('passport-local');
 
-const dburl=process.env.DB_URL || "mongodb://127.0.0.1:27017/shopping-cart"
+const dburl= "mongodb://127.0.0.1:27017/shopping-cart"
 //Connect to DB
 mongoose.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true})
 .then(()=> console.log(" DB CONNECTED!"))
 .catch((err)=> console.log(err));
 
-const session_secret=process.env.SESSION_SECRET || 'this is a secret'
+const session_secret= 'this is a secret'
 
 const sessionflash = {
     secret: session_secret,

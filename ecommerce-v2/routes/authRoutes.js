@@ -23,13 +23,13 @@ router.get("/register", (req,res)=>{
 //register new user
 router.post("/register",async(req,res)=>{
 
-    const {username,password,email}= req.body;
+    const {username,password,email,flexRadioDefault1}= req.body;
 
-        const user = new User({username, email})
+        const user = new User({username, email,flexRadioDefault1})
 
       const newUser = await User.register(user, password);
 
-      req.flash("success", " You have Registered Sucessfully")
+      req.flash("success", " You have Registered Sucessfully as Retailer")
 
     res.redirect("/login")
 
